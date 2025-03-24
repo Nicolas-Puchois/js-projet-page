@@ -1,0 +1,66 @@
+body {
+  scroll-behavior: smooth;
+}
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  min-height: 120vh;
+}
+
+html[data-theme="light"] {
+  background-color: $bg-color-light;
+  color: $text-color-light;
+  & a {
+    color: $text-color-light;
+  }
+}
+
+html[data-theme="dark"] {
+  background-color: $bg-color-dark;
+  color: $text-color-dark;
+  & a {
+    color: $text-color-dark;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html[data-theme="light"] {
+    & header {
+      & nav {
+        #nav {
+          background-color: $bg-color-dark;
+          & ul {
+            & li {
+              & a {
+                color: $text-color-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  html[data-theme="dark"] {
+    & header {
+      & nav {
+        #nav {
+          background-color: $bg-color-light;
+          & ul {
+            & li {
+              & a {
+                color: $text-color-light;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
