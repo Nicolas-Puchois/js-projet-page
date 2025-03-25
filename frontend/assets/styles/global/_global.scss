@@ -6,11 +6,30 @@ img {
 }
 
 a {
+  color: rgb(255, 255, 255);
+  position: relative;
   text-decoration: none;
+}
+a:after {
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 119, 223);
+  transition: transform 0.25s ease-out;
+  bottom: 0;
+  left: 0;
+}
+a:hover {
+  color: blue;
+}
+a:hover:after {
+  transform: scaleX(1);
 }
 
 main {
-  min-height: 120vh;
+  max-width: 100%;
 }
 
 html[data-theme="light"] {
@@ -19,6 +38,15 @@ html[data-theme="light"] {
   & a {
     color: $text-color-light;
   }
+  & header {
+    & nav {
+      & #nav {
+        & i[data-theme-toggler] {
+          color: $text-color-light;
+        }
+      }
+    }
+  }
 }
 
 html[data-theme="dark"] {
@@ -26,6 +54,15 @@ html[data-theme="dark"] {
   color: $text-color-dark;
   & a {
     color: $text-color-dark;
+  }
+  & header {
+    & nav {
+      & #nav {
+        & i[data-theme-toggler] {
+          color: $text-color-dark;
+        }
+      }
+    }
   }
 }
 
@@ -37,10 +74,16 @@ html[data-theme="dark"] {
           background-color: $bg-color-dark;
           & ul {
             & li {
+              & i {
+                color: $text-color-dark;
+              }
               & a {
                 color: $text-color-dark;
               }
             }
+          }
+          & i[data-theme-toggler] {
+            color: $text-color-dark;
           }
         }
       }
@@ -54,10 +97,16 @@ html[data-theme="dark"] {
           background-color: $bg-color-light;
           & ul {
             & li {
+              & i {
+                color: $text-color-light;
+              }
               & a {
                 color: $text-color-light;
               }
             }
+          }
+          & i[data-theme-toggler] {
+            color: $text-color-light;
           }
         }
       }

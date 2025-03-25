@@ -138,11 +138,33 @@ img {
 }
 
 a {
+  color: rgb(255, 255, 255);
+  position: relative;
   text-decoration: none;
 }
 
+a:after {
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 119, 223);
+  transition: transform 0.25s ease-out;
+  bottom: 0;
+  left: 0;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+}
+
 main {
-  min-height: 120vh;
+  max-width: 100%;
 }
 
 html[data-theme=light] {
@@ -150,6 +172,9 @@ html[data-theme=light] {
   color: #212121;
 }
 html[data-theme=light] a {
+  color: #212121;
+}
+html[data-theme=light] header nav #nav i[data-theme-toggler] {
   color: #212121;
 }
 
@@ -160,27 +185,45 @@ html[data-theme=dark] {
 html[data-theme=dark] a {
   color: #ececec;
 }
+html[data-theme=dark] header nav #nav i[data-theme-toggler] {
+  color: #ececec;
+}
 
 @media only screen and (max-width: 600px) {
   html[data-theme=light] header nav #nav {
     background-color: #212121;
   }
+  html[data-theme=light] header nav #nav ul li i {
+    color: #ececec;
+  }
   html[data-theme=light] header nav #nav ul li a {
+    color: #ececec;
+  }
+  html[data-theme=light] header nav #nav i[data-theme-toggler] {
     color: #ececec;
   }
   html[data-theme=dark] header nav #nav {
     background-color: #ececec;
   }
+  html[data-theme=dark] header nav #nav ul li i {
+    color: #212121;
+  }
   html[data-theme=dark] header nav #nav ul li a {
+    color: #212121;
+  }
+  html[data-theme=dark] header nav #nav i[data-theme-toggler] {
     color: #212121;
   }
 }
 header {
-  padding: 4px;
+  position: fixed;
+  width: 100%;
 }
 header nav {
+  max-width: 1280px;
   display: flex;
   justify-content: space-between;
+  margin: 8px auto;
 }
 header nav #nav {
   flex-grow: 1;
@@ -199,6 +242,11 @@ header nav i#toggle-nav {
   display: none;
 }
 
+@media only screen and (max-width: 1280px) {
+  header nav {
+    margin: 8px;
+  }
+}
 @media only screen and (max-width: 600px) {
   header nav #nav {
     position: fixed;
@@ -215,18 +263,30 @@ header nav i#toggle-nav {
     border-radius: 8px;
     height: 80%;
   }
+  header nav #nav i#theme-toggler {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
   header nav #nav ul {
     flex-direction: column;
     width: -moz-fit-content;
     width: fit-content;
   }
+  header nav #nav ul li {
+    display: flex;
+    align-items: center;
+  }
   header nav #nav ul li i.icon-header {
     display: block;
+    margin-right: 1rem;
   }
-  header nav #nav button[data-theme-toggler] {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+  header nav #nav ul li a {
+    display: flex;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 8px 0;
   }
   header nav #nav.mobile {
     transform: translate(0, -50%);

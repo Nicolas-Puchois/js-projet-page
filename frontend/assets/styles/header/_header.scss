@@ -1,8 +1,11 @@
 header {
-  padding: 4px;
+  position: fixed;
+  width: 100%;
   & nav {
+    max-width: 1280px;
     display: flex;
     justify-content: space-between;
+    margin: 8px auto;
     & #nav {
       flex-grow: 1;
       display: flex;
@@ -20,6 +23,14 @@ header {
     }
     & i#toggle-nav {
       display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  header {
+    & nav {
+      margin: 8px;
     }
   }
 }
@@ -43,19 +54,28 @@ header {
         min-height: 50vh;
         border-radius: 8px;
         height: 80%;
+        & i#theme-toggler {
+          cursor: pointer;
+          position: absolute;
+          top: 8px;
+          right: 8px;
+        }
         & ul {
           flex-direction: column;
           width: fit-content;
           & li {
+            display: flex;
+            align-items: center;
             & i.icon-header {
               display: block;
+              margin-right: 1rem;
+            }
+            & a {
+              display: flex;
+              width: fit-content;
+              padding: 8px 0;
             }
           }
-        }
-        & button[data-theme-toggler] {
-          position: absolute;
-          top: 8px;
-          right: 8px;
         }
       }
       & #nav.mobile {
