@@ -29,7 +29,29 @@ a:hover:after {
 }
 
 main {
-  max-width: 100%;
+  max-width: 1024px;
+  & section#hero-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/frontend/assets/image/Background_with_octogone_.png")
+      no-repeat center center / cover;
+    & #content {
+      display: flex;
+      width: 80%;
+      max-width: 800px;
+      & div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  & section:nth-child(1) {
+    min-height: 100vh;
+  }
+  & section:not(:nth-child(1)) {
+    height: 100px;
+  }
 }
 
 html[data-theme="light"] {
@@ -39,6 +61,7 @@ html[data-theme="light"] {
     color: $text-color-light;
   }
   & header {
+    background-color: $bg-color-light;
     & nav {
       & #nav {
         & i[data-theme-toggler] {
@@ -56,6 +79,8 @@ html[data-theme="dark"] {
     color: $text-color-dark;
   }
   & header {
+    background-color: $bg-color-dark;
+
     & nav {
       & #nav {
         & i[data-theme-toggler] {
@@ -87,6 +112,8 @@ html[data-theme="dark"] {
           }
         }
       }
+    }
+    & main {
     }
   }
 

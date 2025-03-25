@@ -164,7 +164,28 @@ a:hover:after {
 }
 
 main {
-  max-width: 100%;
+  max-width: 1024px;
+}
+main section#hero-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/frontend/assets/image/Background_with_octogone_.png") no-repeat center center/cover;
+}
+main section#hero-header #content {
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+}
+main section#hero-header #content div {
+  display: flex;
+  flex-direction: column;
+}
+main section:nth-child(1) {
+  min-height: 100vh;
+}
+main section:not(:nth-child(1)) {
+  height: 100px;
 }
 
 html[data-theme=light] {
@@ -173,6 +194,9 @@ html[data-theme=light] {
 }
 html[data-theme=light] a {
   color: #212121;
+}
+html[data-theme=light] header {
+  background-color: #ececec;
 }
 html[data-theme=light] header nav #nav i[data-theme-toggler] {
   color: #212121;
@@ -184,6 +208,9 @@ html[data-theme=dark] {
 }
 html[data-theme=dark] a {
   color: #ececec;
+}
+html[data-theme=dark] header {
+  background-color: #212121;
 }
 html[data-theme=dark] header nav #nav i[data-theme-toggler] {
   color: #ececec;
