@@ -18,24 +18,23 @@
   <body>
     <header>
       <nav>
-        <div id="logo">LOGO</div>
+        <div id="logo">
+          <a href="/frontend/"><i class="fas fa-helicopter"></i></a>
+        </div>
         <div id="nav">
           <ul>
             <li>
-              <i class="fab fa-bitcoin icon-header"></i>
-              <a href="#">Le projet</a>
+              <i class="fas fa-helicopter"></i><a href="/frontend"> Home</a>
             </li>
             <li>
-              <i class="fab fa-ethereum icon-header"></i>
-              <a href="#">Nos Cryptos</a>
+              <i class="fab fa-bitcoin"></i><a href="#projet">Le projet</a>
             </li>
             <li>
-              <i class="fab fa-ethereum icon-header"></i>
-              <a href="#">Nos Cryptos</a>
+              <i class="fab fa-ethereum"></i><a href="#crypto">Nos Cryptos</a>
             </li>
+            <li><i class="fab fa-contao"></i><a href="#contact">Contact</a></li>
             <li>
-              <i class="fab fa-contao icon-header"></i>
-              <a href="#">Contact</a>
+              <i class="fab fa-contao"></i><a href="#Carrousel">Carrousel</a>
             </li>
           </ul>
           <i class="fas fa-moon" data-theme-toggler></i>
@@ -45,8 +44,9 @@
     </header>
     <main>
       <section id="hero-header">
+        <h1>la crypto pour les nuls</h1>
         <div id="content">
-          <p>
+          <p id="p-left">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas
             tempore molestias sint ex laboriosam iure ipsa ipsum,
           </p>
@@ -55,14 +55,15 @@
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas
               tempore molestias sint ex laboriosam iure ipsa ipsum,
             </p>
+            <button class="info">En savoir plus...</button>
           </div>
-          <button>En savoir plus...</button>
         </div>
       </section>
       <section id="projet">Projet</section>
       <section id="crypto">Cryptos</section>
+      <section id="#carrousel">carrousel</section>
       <section id="contact">Contact</section>
     </main>
-    <div id="social"></div>
+    <i class="fas fa-arrow-up" id="up-arrow"></i>
   </body>
 </html>
