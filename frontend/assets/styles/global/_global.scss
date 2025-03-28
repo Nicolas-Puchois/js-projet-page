@@ -100,6 +100,8 @@ button.info:hover {
 }
 
 main {
+  // position: relative;
+  margin: auto;
   max-width: 1024px;
   & section#hero-header {
     color: $text-color-light;
@@ -146,9 +148,9 @@ main {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
   }
-  & section:not(:nth-child(1)) {
-    height: 400px;
-  }
+  // & section:not(:nth-child(1)) {
+  //   height: 400px;
+  // }
 }
 
 html[data-theme="light"] {
@@ -250,5 +252,11 @@ html[data-theme="dark"] {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #up-arrow {
+    bottom: 4rem;
   }
 }

@@ -1,3 +1,12 @@
+const main = document.querySelector("main");
+const scrollToTopButton = document.querySelector("#up-arrow");
+const root = document.documentElement;
+
+function posX() {
+  const pos = (root.clientWidth - main.clientWidth) / 2;
+  scrollToTopButton.style.right = `${pos}px`;
+}
+
 function scrollToTop() {
   const scrollToTopButton = document.querySelector("#up-arrow");
   const heroHeader = document.querySelector("#hero-header");
@@ -15,4 +24,8 @@ function scrollToTop() {
   scrollToTopButton.addEventListener("click", () => window.scrollTo(0, 0));
 }
 
-window.addEventListener("DOMContentLoaded", scrollToTop);
+window.addEventListener("DOMContentLoaded", () => {
+  scrollToTop();
+  window.addEventListener("resize", posX);
+});
+posX();
